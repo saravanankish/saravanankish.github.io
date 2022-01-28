@@ -324,7 +324,6 @@ body.section-show .close-btn {
   display: block;
   font-size: 18px;
   padding: 25px 0;
-  text-decoration: none;
   position: relative;
   line-height: 1em;
   text-align: left;
@@ -477,6 +476,203 @@ body.section-show .close-btn {
 
 /* Resume Start */
 
+.timeline-block {
+  padding-bottom: 60px;
+}
+
+.timeline-block .timeline{
+	padding-bottom:90px;
+	margin-top:60px;
+}
+
+.timeline{
+	position:relative;
+	list-style:none;
+	margin:0;
+  padding: 0;
+}
+
+.timeline:before{
+	content: ' ';
+	position:absolute;
+	top:0;
+	left:50%;
+	margin-left:-1px;
+	height:80%;
+	width:2px;
+	background:#BBB;
+	border-radius: 0 0 5px 5px;
+}
+
+.timeline > li:before,
+.timeline > li:after{
+	content: ' ';
+	display:table;
+}
+
+.timeline > li:after{
+	clear:both;
+}
+
+.timeline > li > .timeline-description{
+	float:right;
+}
+
+.timeline > li > .timeline-description > h4{
+	font-size:14px;
+	letter-spacing:2px;
+	margin-top:0;
+}
+
+.timeline > li > .timeline-content{
+	float:left;
+	text-align:right;
+	position:relative;
+}
+
+.timeline > li.reverse > .timeline-content{
+	float:right;
+	text-align:left;
+}
+
+.timeline > li.reverse > .timeline-description{
+	float:left;
+	text-align:right;
+}
+
+.timeline > li{
+	margin:70px 0;
+	position:relative;
+}
+
+.timeline > li:not(.timeline-header):before{
+	content: ' ';
+	position:absolute;
+	top:0;
+	left:50%;
+	height:11px;
+	width:11px;
+	transform:translateX(-50%) rotate(45deg);
+	background:#B7A389;
+}
+
+.timeline > li > div{
+	width:50%;
+	padding:0 35px;
+}
+
+.timeline > li > .timeline-content > h4{
+	margin-top:0;
+	margin-bottom:7px;
+	letter-spacing:2px;
+	font-size:20px;
+}
+
+.timeline > li > .timeline-content > span{
+	display:block;
+	margin-bottom:15px;
+	color:#BBB;
+  font-size: 14px;
+}
+
+.timeline > li > .timeline-content > p{
+	margin:0;
+	line-height:1.7em;
+	color:#777;
+}
+
+.timeline > li.timeline-header{
+	background:#FFF;
+	position:relative;
+	z-index:10;
+	text-align:center;
+	margin-bottom:10px;
+	margin-top:100px;
+}
+
+.timeline > li.timeline-header > h4{
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:16px;
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	position:relative;
+	margin:0;
+	letter-spacing:4px;
+}
+
+.timeline > li.timeline-header:first-of-type{
+	margin-top:0;
+}
+
+.timeline > li.timeline-header > h4:before,
+.timeline > li.timeline-header > h4:after{
+	content: ' ';
+	display:block;
+	height:2px;
+	background:#BBB;
+	margin:0 -5px;
+	margin-top:8px;
+}
+
+.timeline > li.timeline-header > h4:before{
+	margin-top:0;
+	margin-bottom:8px;
+}
+
+.hobbies {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  background:#F5F5F5;
+}
+
+.hobbies .section-header {
+  margin-bottom: 100px;
+}
+
+.hobby {
+  position:relative;
+	text-align:center;
+	margin-bottom:70px;
+  transition:all .3s ease-in-out;
+}
+
+.hobby > .icon {
+  font-size:0;
+	background:#B7A389;
+	color:#FFF;
+  transform:rotate(45deg);
+	width:80px;
+	height:80px;
+	line-height:80px;
+	margin:auto;
+	margin-bottom:40px;
+  transition:all .3s ease-in-out;
+	position:relative;
+	top:0;
+}
+
+.hobby:hover > .icon{
+	transform: scale(1.2) rotate(45deg);
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.hobby > .icon > svg{
+	display:block;
+	height: 80%;
+	width: 80%;
+	text-align:center;
+	transform:rotate(-45deg);
+  padding-top: 10px;
+} 
+
+.hobby > h4{
+	font-size:18px;
+	letter-spacing:2px;
+	margin-top:0;
+	margin-top:2px;
+}
 
 /* Resume End */
 
@@ -650,6 +846,39 @@ body.section-show .close-btn {
   .home-name {
     margin-top: 80px;
   }
+
+  .my-img{
+		margin-bottom:40px;
+		text-align:center;
+	}
+
+  .my-info > li{
+		width:50%;
+	}
+
+  .timeline > li:before,
+	.timeline:before{
+		display:none;
+	}
+	.timeline > li > .timeline-description{
+		opacity:.5;
+		text-align:right;
+		float:left;
+	}
+	.timeline > li.inverse > .timeline-description{
+		text-align:left;
+		float:right;
+	}
+	.timeline > li > div{
+		width:85%;
+		float:none;
+		display:block;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.timeline > li > .timeline-content{
+		text-align:right;
+	}
 }
 
 @media (max-width: 768px) {

@@ -847,6 +847,10 @@ body.section-show .close-btn {
     margin-top: 80px;
   }
 
+  .home-name > h1 {
+    font-size: 30px;
+  }
+
   .my-img{
 		margin-bottom:40px;
 		text-align:center;
@@ -893,7 +897,7 @@ body.section-show .close-btn {
     margin-top: 120px;
   }
   .home-img > img {
-    transform: rotate(-45deg) translateY(100px);
+    transform: rotate(-45deg) translate(25px, 75px);
     position: absolute;
     bottom: 0;
     left: -40px;

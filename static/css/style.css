@@ -37,6 +37,7 @@ body.section-show .section.active {
 
 #container {
   overflow-x: hidden;
+  user-select: none;
 }
 
 .section {
@@ -240,12 +241,13 @@ body.section-show .close-btn {
   border-radius: 0;
   margin: 100px auto;
   margin-bottom: 0;
+  user-select: none;
 }
 
 .home-img > img {
   max-width: 100%;
   vertical-align: bottom;
-  transform: rotate(-45deg) translate(-20px, 100px);
+  transform: rotate(-45deg) translateY(100px);
 }
 
 .home-title {
@@ -256,6 +258,7 @@ body.section-show .close-btn {
   z-index: 10;
   margin-top: -400px;
   transform: rotate(45deg);
+  user-select: none;
 }
 
 .home-title > span {
@@ -280,13 +283,13 @@ body.section-show .close-btn {
 }
 
 .t2 {
-  top: 5px;
+  top: 0px;
   left: 0;
   transform: translateY(-100%);
 }
 .t3 {
   left: 0;
-  bottom: 5px;
+  bottom: 0px;
   transform: translateY(100%) rotate(180deg);
 }
 
@@ -298,6 +301,7 @@ body.section-show .close-btn {
   z-index: 20;
   transform: rotate(45deg);
   position: relative;
+  user-select: none;
 }
 
 .home-navbar > ul {
@@ -375,6 +379,7 @@ body.section-show .close-btn {
 
 .about-section {
   padding-top: 0;
+  user-select: none;
 }
 
 .about-me-section {
@@ -476,9 +481,6 @@ body.section-show .close-btn {
 
 /* Resume Start */
 
-.timeline-block {
-  padding-bottom: 60px;
-}
 
 .timeline-block .timeline{
 	padding-bottom:90px;
@@ -627,6 +629,11 @@ body.section-show .close-btn {
   background:#F5F5F5;
 }
 
+.hobbies:hover {
+  transform: scaleY(1.001);
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
 .hobbies .section-header {
   margin-bottom: 100px;
 }
@@ -672,6 +679,176 @@ body.section-show .close-btn {
 	letter-spacing:2px;
 	margin-top:0;
 	margin-top:2px;
+}
+
+.skills {
+  padding: 100px 0;
+}
+
+.skills .section-header{
+	margin-bottom:80px;
+}
+
+.skill{
+	position:relative;
+	margin-bottom:60px;
+}
+
+.skill > h4{
+	font-size:14px;
+	margin-top:0;
+	margin-bottom:5px;
+	letter-spacing:2px;
+	color:#B7A389;
+}
+
+.skill > .skill-bar{
+	height:10px;
+	background:#F0F0F0;
+}
+
+.skill > .skill-bar > .bar{
+	background:#888;
+	height:100%;
+	width: 0;
+	position:relative;
+}
+
+.skill > .skill-bar > .bar > .percentage{
+	position:absolute;
+	padding:4px 7px;
+	background:#888;
+	color:#FFF;
+	bottom:100%;
+	right:0;
+	font-size:11px;
+	margin-bottom:10px;
+}
+
+.skill > .skill-bar > .bar > .percentage:after{
+	content: ' ';
+	position:absolute;
+	border-bottom:solid 7px transparent;
+	border-right:solid 7px #888;
+	bottom:-7px;
+	right:0;
+}
+
+
+.skill > .skill-bar > .html {
+  width: 90%;
+}
+
+.skill > .skill-bar > .react {
+  width: 80%;
+}
+
+.skill > .skill-bar > .mongoDb {
+  width: 70%;
+}
+
+.skill > .skill-bar > .node {
+  width: 90%;
+}
+
+.skill > .skill-bar > .django {
+  width: 80%;
+}
+
+.skill > .skill-bar > .appDev {
+  width: 50%;
+}
+
+.skill > .skill-bar > .springBoot {
+  width: 70%;
+}
+
+.skill > .skill-bar > .java {
+  width: 80%;
+}
+
+.skill > .skill-bar > .cProgram {
+  width: 80%;
+}
+
+.skill > .skill-bar > .python {
+  width: 90%;
+}
+
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .html {
+  animation: ninety 2s ease-out;
+} 
+
+.skills:hover > .container > .row > .col-md-6 >.skill > .skill-bar > .react {
+  animation: eighty 2s ease-out;
+}
+
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .mongoDb {
+  animation: seventy 2s ease-out;
+}
+
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .node {
+  animation: ninety 2s ease-out;
+}
+
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .django {
+  animation: eighty 2s ease-out;
+}
+
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .appDev {
+  animation: fifty 2s ease-out;
+}
+
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .springBoot {
+  animation: seventy 2s ease-out;
+}
+
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .java {
+  animation: eighty 2s ease-out;
+}
+
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .cProgram {
+  animation: eighty 2s ease-out;
+}
+
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .python {
+  animation: ninety 2s ease-out;
+}
+
+@keyframes ninety {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes eighty {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+@keyframes seventy {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 70%;
+  }
+}
+
+@keyframes fifty {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 50%;
+  }
 }
 
 /* Resume End */

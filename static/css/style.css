@@ -256,12 +256,14 @@ body.section-show .close-btn {
   margin-bottom: 0;
   user-select: none;
   box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
+  /* background: url('./static/images/my-pic.jpg') */
 }
 
 .home-img > img {
-  max-width: 100%;
+  max-width: 600px;
   vertical-align: bottom;
-  transform: rotate(-45deg) translateY(100px);
+  transform: rotate(-45deg) translateY(-130px);
+  object-fit: cover;
 }
 
 .home-title {
@@ -1244,7 +1246,8 @@ body.section-show .close-btn {
   }
 
   .home-img > img {
-    transform: rotate(-45deg) translateY(45px);
+    max-width: 510px;
+    transform: rotate(-45deg) translateY(-110px);
   }
 
   .home-navbar {
@@ -1380,13 +1383,18 @@ body.section-show .close-btn {
   }
 
   .home-img > img {
-    transform: rotate(-45deg) translate(25px, 75px);
+    transform: rotate(-45deg) translate(250px, -350px);
     position: absolute;
-    bottom: 0;
-    left: -40px;
   }
   .project-items > .item {
     width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .home-img > img {
+    transform: rotate(-45deg) translate(150px, -350px);
+    position: absolute;
   }
 }
 

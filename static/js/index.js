@@ -1,3 +1,7 @@
+const url_contact = "https://ek49t7.deta.dev/contact"; // My api to send mail
+const xhr = new XMLHttpRequest();
+
+// Function to calculate age dynamically from DOB
 const calculateAge = () => {
     var dob = new Date('05/30/2001')
     var month_difference = Date.now() - dob.getTime();
@@ -7,6 +11,7 @@ const calculateAge = () => {
     return age;
 }
 
+// Function to add Image Card in project section dynamically
 const getImageCard = (row) => {
     var projects = document.querySelector('#project-items');
     var item = document.createElement('div');
@@ -64,6 +69,17 @@ const getImageCard = (row) => {
     projects.appendChild(item);
 }
 
+// Function to validate Phone Number in contact form
+const validatePhoneNumber = (number) => {
+    return (/^[0-9]{10}$/).test(number)
+}
+
+// Function to validate Email Id in contact form
+const validateEmail = (email) => {
+    return String(email).toLowerCase().match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+}
+
+// My list of project data
 const projects = [
     {
         name: 'RF Remote',
@@ -144,50 +160,37 @@ const projects = [
         type: 'web',
         image: './static/images/sort-visualizer.png',
     },
-    // {
-    //     name: '',
-    //     description: '',
-    //     code: '',
-    //     type: '',
-    //     image: '',
-    // },
-    // {
-    //     name: '',
-    //     description: '',
-    //     code: '',
-    //     type: '',
-    //     image: '',
-    // },
-    // {
-    //     name: '',
-    //     description: '',
-    //     code: '',
-    //     type: '',
-    //     image: '',
-    // },
-    // {
-    //     name: '',
-    //     description: '',
-    //     code: '',
-    //     type: '',
-    //     image: '',
-    // },
-    // {
-    //     name: '',
-    //     description: '',
-    //     code: '',
-    //     type: '',
-    //     image: '',
-    // },
-    // {
-    //     name: '',
-    //     description: '',
-    //     code: '',
-    //     type: '',
-    //     image: '',
-    // },
 ]
 
+// Pre-defined success and error message for form submit action
+alerts = {			
+    success: 
+    "<div class='form-group' >\
+        <div class='alert alert-success alert-dismissible' role='alert'> \
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close' onclick='return closeInfo()' > \
+                <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-x-lg' viewBox='0 0 16 16'> \
+                    <path fill-rule='evenodd' d='M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z'/> \
+                    <path fill-rule='evenodd' d='M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z'/> \
+                </svg>\
+            </button> \
+            <strong>Message Sent!</strong> We'll be in touch as soon as possible\
+        </div>\
+    </div>",
+    
+    
+    error: 
+    "<div class='form-group' >\
+        <div class='alert alert-danger alert-dismissible' role='alert'> \
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close' > \
+                <i class='ion-ios-close-empty' ></i> \
+            </button> \
+            <strong>Error!</strong> Sorry, an error occurred. Try again.\
+        </div>\
+    </div>"
+    
+};
+
+// Function to shuffle the project array data
 const shuffleArray = (array) => {
     for (var i = array.length - 1; i > 0; i--) {
         var rand = Math.floor(Math.random() * (i + 1));
@@ -195,12 +198,17 @@ const shuffleArray = (array) => {
     }
 }
 
+// To show the calculated age in the about me section
+document.querySelector('.age').innerHTML = `${calculateAge()} years`;
+
+// To close the open section
 document.querySelector('.close-btn').addEventListener('click', () => {
     document.querySelector('body').classList.remove('section-show');
     document.querySelector('body').classList.add('section-close');
     document.querySelector('.section.active').classList.remove('active');
 })
 
+// To open an section from home page
 document.querySelectorAll('.home-navbar > ul > li > a[data-section]').forEach(ele => ele.addEventListener('click', (e) => {
     e.preventDefault();
     console.log(e.target.dataset.section)
@@ -223,6 +231,7 @@ document.querySelectorAll('.home-navbar > ul > li > a[data-section]').forEach(el
     }
 }));
 
+// To filter the projects based on the type of projects in projects section
 document.querySelectorAll('.filters > ul > li > a').forEach(ele => ele.addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector('.filters > ul > li > a.active').classList.remove('active');
@@ -240,4 +249,36 @@ document.querySelectorAll('.filters > ul > li > a').forEach(ele => ele.addEventL
     }
 }))
 
-document.querySelector('.age').innerHTML = `${calculateAge()} years`;
+// To send the response of the form to my email id 
+document.querySelector('#contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    console.log(e.path[0][0].value)
+    let form = e.path[0];
+    let name = form[0].value;
+    let phone = form[1].value;
+    let email = form[2].value;
+    let comment = form[3].value;
+    console.log(name, phone, email, comment)
+    if(!validateEmail(email)) {
+        document.querySelector('#error-email').innerHTML = 'Please enter a valid email address.'
+        return;
+    }else{
+        document.querySelector('#error-email').innerHTML = ''
+    }
+    if(!validatePhoneNumber(phone)) {
+        document.querySelector('#error-phone').innerHTML = 'Please enter a valid number with 10 digits.'
+        return;
+    }else{
+        document.querySelector('#error-phone').innerHTML = ''
+    }
+    xhr.open("POST", url_contact);
+    xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+    xhr.send(`name=${name}&mail=${email}&number=${phone}&comment=${comment}`);
+    document.querySelector('#contact-form-result').innerHTML = alerts.success   
+    document.querySelector('#contact-form').reset();
+})
+
+// Function to close the form info section
+const closeInfo = () => {
+    document.querySelector('#contact-form-result').innerHTML = '';
+}

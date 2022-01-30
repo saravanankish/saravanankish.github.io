@@ -141,6 +141,7 @@ const projects = [
         name: 'Fantasy dress application',
         description: 'Created an e-commerce dress application for Virtusa Neural Hack Season 5 competition. The tech-stack used was React and Spring Boot',
         code: 'https://github.com/saravanankish/fantasy-dress',
+        site: '',
         type: 'web',
         image: './static/images/fantasy-dress.jpg',
     },

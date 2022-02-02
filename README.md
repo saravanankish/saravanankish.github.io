@@ -13,4 +13,4 @@ A website designed using HTML, CSS, Bootstrap & Javascript describing myself. I 
 
 ### Website
 
-[![Home Page of site](./static/images/site.png "Sorting Visualizer")*click here to see the website*](https://saravanankish.github.io)
+[![Home Page of site](./static/images/site.PNG "Sorting Visualizer")*click here to see the website*](https://saravanankish.github.io)

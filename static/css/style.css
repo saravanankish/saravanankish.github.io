@@ -292,20 +292,20 @@ body.section-show .close-btn {
 }
 
 .t1 {
-  left: 0;
-  bottom: 0;
+  left: -10px;
+  bottom: 0px;
   transform: rotate(-90deg) translateY(-100%);
   transform-origin: 0% 0%;
 }
 
 .t2 {
-  top: 0px;
-  left: 0;
+  top: -10px;
+  left: 0px;
   transform: translateY(-100%);
 }
 .t3 {
   left: 0;
-  bottom: 0px;
+  bottom: -10px;
   transform: translateY(100%) rotate(180deg);
 }
 

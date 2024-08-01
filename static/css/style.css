@@ -240,6 +240,7 @@ body.section-show .close-btn {
   padding-top: 10px;
   padding-bottom: 35px;
   position: relative;
+  height: 100vh;
 }
 
 .home-img {
@@ -497,7 +498,6 @@ body.section-show .close-btn {
 /* Resume Start */
 
 .timeline-block .timeline {
-  padding-bottom: 90px;
   margin-top: 60px;
 }
 
@@ -764,28 +764,28 @@ body.section-show .close-btn {
   width: 90%;
 }
 
-.skill > .skill-bar > .django {
+.skill > .skill-bar > .figma {
   width: 80%;
 }
 
-.skill > .skill-bar > .appDev {
-  width: 50%;
+.skill > .skill-bar > .git {
+  width: 90%;
 }
 
 .skill > .skill-bar > .springBoot {
-  width: 70%;
+  width: 90%;
 }
 
 .skill > .skill-bar > .java {
   width: 80%;
 }
 
-.skill > .skill-bar > .cProgram {
-  width: 80%;
+.skill > .skill-bar > .kubernetes {
+  width: 70%;
 }
 
-.skill > .skill-bar > .python {
-  width: 90%;
+.skill > .skill-bar > .docker {
+  width: 70%;
 }
 
 .skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .html {
@@ -804,12 +804,12 @@ body.section-show .close-btn {
   animation: ninety 2s ease-out;
 }
 
-.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .django {
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .figma {
   animation: eighty 2s ease-out;
 }
 
-.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .appDev {
-  animation: fifty 2s ease-out;
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .git {
+  animation: ninety 2s ease-out;
 }
 
 .skills:hover
@@ -819,7 +819,7 @@ body.section-show .close-btn {
   > .skill
   > .skill-bar
   > .springBoot {
-  animation: seventy 2s ease-out;
+  animation: ninety 2s ease-out;
 }
 
 .skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .java {
@@ -832,12 +832,12 @@ body.section-show .close-btn {
   > .col-md-6
   > .skill
   > .skill-bar
-  > .cProgram {
-  animation: eighty 2s ease-out;
+  > .kubernetes {
+  animation: seventy 2s ease-out;
 }
 
-.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .python {
-  animation: ninety 2s ease-out;
+.skills:hover > .container > .row > .col-md-6 > .skill > .skill-bar > .docker {
+  animation: seventy 2s ease-out;
 }
 
 @keyframes ninety {
@@ -864,15 +864,6 @@ body.section-show .close-btn {
   }
   to {
     width: 70%;
-  }
-}
-
-@keyframes fifty {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 50%;
   }
 }
 

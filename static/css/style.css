@@ -37,6 +37,7 @@ body.section-show .section.active {
 
 #container {
   overflow-x: hidden;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -234,6 +235,15 @@ body.section-show .close-btn {
   transition-delay: 0.3s;
 }
 
+.link {
+  color: #999;
+}
+
+.space {
+  width: 8px;
+  display: inline-block;
+}
+
 /* Home Section */
 
 .home {
@@ -255,6 +265,7 @@ body.section-show .close-btn {
   border-radius: 0;
   margin: 100px auto;
   margin-bottom: 0;
+  -webkit-user-select: none;
   user-select: none;
   box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.3);
   /* background: url('./static/images/my-pic.jpg') */
@@ -275,6 +286,7 @@ body.section-show .close-btn {
   z-index: 10;
   margin-top: -400px;
   transform: rotate(45deg);
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -290,6 +302,11 @@ body.section-show .close-btn {
   text-align: center;
   z-index: 5;
   letter-spacing: 15px;
+  transition: all 0.6s ease-out;
+}
+
+.home-title > span:hover {
+  font-weight: 600;
 }
 
 .t1 {
@@ -318,6 +335,7 @@ body.section-show .close-btn {
   z-index: 20;
   transform: rotate(45deg);
   position: relative;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -396,6 +414,7 @@ body.section-show .close-btn {
 
 .about-section {
   padding-top: 0;
+  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -1103,6 +1122,10 @@ body.section-show .close-btn {
   margin-bottom: 60px;
 }
 
+.contact-me-img > img {
+  width: 30vw;
+}
+
 .form-control {
   padding: 10px;
   height: auto;
@@ -1379,6 +1402,15 @@ body.section-show .close-btn {
   }
   .project-items > .item {
     width: 100%;
+  }
+
+  .contact-me-img > img {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .space {
+    width: 0;
   }
 }
 
